@@ -23,27 +23,30 @@
     \item Tests of a machine's ability to exhibit intelligent behaviour equivalent to, or indistinguishable from that of a human
     \item Has some philosophical problems (Complex problems, humans cant solve / AI must learn to lie)
 \end{itemize}
-\textbf{Examples of application (today):}
+\textbf{Examples of application (today)}
 \begin{itemize}
     \item Personalization of news feeds
     \item Product searching and recommendation s on eCommerce platforms
     \item Voice-to-text
     \item Predictive maintenance
 \end{itemize}
-\subsection{Tasks and Algorithms of Machine Learning}
-\includegraphics[width=\linewidth]{./img/machine_learning_sections.png}
-
-\subsection{Natural Language Processing (NLP)}
+\textbf{Bias}
 \begin{itemize}
-    \item Automated processing of human language (written \& spoken)
-    \item Aims to understand and generate human (natural) language
-    \item Understanding spoken text is still difficult
-    \item Understanding written text became BIG business (search-engines)
-    \item Generating human-like conversations is still very hard
+    \item The inability for a machine learning method (like linear regression) to capture the true relationship, eg. Straight Line can't be curved like the true relationship
 \end{itemize}
+\textbf{Variance}
+\begin{itemize}
+    \item The difference in fits between training and testing set (different data sets in general)
+    \item \textcolor{blue}{Low variance} Sum of Squares are very similar for different datasets
+\end{itemize}
+The ideal ML algorithm has low bias and can accurately model the true relationship and it has low variability by producing consistent predictions across different datasets.
+
+\subsection{Tasks and Algorithms of Machine Learning}
+\includegraphics[width=\linewidth]{machine_learning_sections.png}
 
 \subsection{Dialogflow}
 \textbf{Intents}
+An intent categorizes an end-user's intention for one conversation turn.
 \begin{itemize}
     \item Recognizes the need of a user
     \item Require training to match to user inputs
@@ -51,17 +54,18 @@
     \item Fallback Intents (on Failure)
 \end{itemize}
 \textbf{Entities}
+Each intent parameter has a type, called the entity type, which dictates exactly how data from an end-user expression is extracted.
 \begin{itemize}
     \item Extract information from user inputs
-    \item Help to identifiy required intent
-    \item System Entities: (Date and time / Numbers / Amounts / Units / etc.)
-    \item Developer Entities: defined by list of words (@pizza-type / @drink / etc.)
-    \item User Entities: transient, temporary Information based on Conversation
+    \item Help to identify required intent
+    \item \textcolor{blue}{System Entities} Date and time / Numbers / Amounts / Units / etc.
+    \item \textcolor{blue}{Developer Entities} defined by list of words (@pizza-type / @drink / etc.)
+    \item \textcolor{blue}{User Entities} transient, temporary Information based on Conversation (@previous-orders)
 \end{itemize}
 \textbf{Dialog}
 \begin{itemize}
-    \item Linear: Gather a list of information
-    \item Non Linear: Using Contexts
+    \item \textcolor{blue}{Linear} Gather a list of information
+    \item \textcolor{blue}{Non Linear} Using Contexts
 \end{itemize}
 \textbf{Context}
 \begin{itemize}
@@ -75,13 +79,13 @@
     \item e.g. Webhook
 \end{itemize}
 
-\subsection{7 Steps of ML}
+\subsection{7 Steps of Machine Learning}
 \begin{enumerate}
-    \item Gathering data
-    \item Preparing that data
-    \item Choosing a model
-    \item Training
-    \item Evaluation
-    \item Hyperparameter tuning
-    \item Prediction
+    \item \textcolor{blue}{Gathering data} Collect quantity/quality data for training/testing
+    \item \textcolor{blue}{Preparing that data} Cleanup data (remove duplicates, correct errors, deal with missing values, normalize data, convert data types)
+    \item \textcolor{blue}{Choosing a model} Select the right algorithm(s)
+    \item \textcolor{blue}{Training} Train the model, each iteration of process is a training step
+    \item \textcolor{blue}{Evaluation} Use metrics to measure objective performance of the model, test model against previously unseen data, good train/eval split is 80/29, 70/30
+    \item \textcolor{blue}{Hyperparameter tuning} Try to improve upon the positive results achieved during the evaluation through gamble with stepNumber of training steps, learning rate, initialization values and distribution
+    \item \textcolor{blue}{Prediction} Model should be ready for practical applications
 \end{enumerate}

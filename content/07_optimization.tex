@@ -6,27 +6,79 @@
 \end{itemize}
 
 \subsection{Gradient Descent}
+At any location [a,b] we look at the error-gradient in the neighbourhood of [a,b] and move a (small) step in the direction where the error shrinks the most.
+By repeating this procedure, we will eventually arrive at the location where the error is smallest.
+
 \begin{itemize}
-    \item Iterative Method
+    \item Iterative Method/Procedure
     \item Each iteration, the model parameters are updated such as that the Loss (MSE) is reduced
+    \item Move along a trajectory which includes fewer points
+    \item At each point of the trajectory we evaluate the gradient of the error function
+    \item At each iteration, we would have to iterate over all $N = 1'000$ points to calculate the gradient of the loss function.
 \end{itemize}
 
+\textbf{Calculate Gradient}
+
+\begin{center}
+    $
+    \textrm{Gradient of E} = \begin{bmatrix}
+                                 \frac{\partial E}{\partial a} \\
+                                 \frac{\partial E}{\partial b} \\
+    \end{bmatrix}
+    $
+\end{center}
+
+Calculate these two partial derivatives
+
+\begin{center}
+    $\frac{\partial E}{\partial a} = \frac{1}{N}\sum_{i=1}^N (y_i - (a \cdot x_i + b)) \cdot -x_i$
+\end{center}
+
+\begin{center}
+    $\frac{\partial E}{\partial b} = \frac{1}{N}\sum_{i=1}^N (y_i - (a \cdot x_i + b)) \cdot -1$
+\end{center}
+
+\begin{center}
+    $
+     \textrm{Gradient of E} = \begin{bmatrix}
+                                  \frac{\partial E}{\partial a} \\
+                                  \frac{\partial E}{\partial b} \\
+     \end{bmatrix}
+     =\begin{bmatrix}
+          \frac{1}{N}\sum_{i=1}^N (y_i - (a \cdot x_i + b))(-x_i) \\
+          \frac{1}{N}\sum_{i=1}^N (y_i - (a \cdot x_i + b))(-1) \\
+     \end{bmatrix}
+    $
+\end{center}
+
 \subsection{Stochastic Gradient Descent (SGD)}
+we do not need the exact gradient to find a trajectory toward the minimum. Instead, at each iteration we can randomly pick a few datapoints and use them to calculate an approximation of the gradient.
 \begin{itemize}
     \item At each iteration, the gradient is calculated on a (randomly selected) subset of the data
     \item For a fixed learning rate, SGD does not converge
 \end{itemize}
 
-\subsubsection{Annealed SGD}
+\textbf{Mini-batches} \\
+
+\begin{itemize}
+    \item $1<n<N$
+    \item Increasing the batch-size will reduce the variance of the gradient estimation
+    \item batch-size $n=1$ yields a very noisy gradient
+    \item batch-size $n=N$ is expensive to calculate
+    \item often mini-batches of size $n=32$ or $n=64$ are used
+\end{itemize}
+
+\textbf{Annealed SGD}
 \begin{itemize}
     \item The learning rate alpha is reduced over time
     \item This is called (simulated) annealing
     \item There are different options (called schedules) how to reduce alpha over time
+    \item A fixed learning rate $\alpha$ does not converge. The algorithm keeps fluctuating around the minimum. Annealed SGD solves this appearent contradiction by adapting the learning rate. It starts with a large $\alpha$ and reduces it over time
 \end{itemize}
 
 \subsubsection{General remarks on SGD}
 \begin{itemize}
     \item Gradient-based methods only work if we can express a Loss function as a differentiable function
-    \item SGD is dealing woth only a single datum at each iteration. This is very inefficient and rarely used.
+    \item SGD is dealing with only a single datum at each iteration. This is very inefficient and rarely used.
     \item Batch- or mini-batch gradient-descent is usually used
 \end{itemize}

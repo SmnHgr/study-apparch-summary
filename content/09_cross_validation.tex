@@ -8,9 +8,9 @@
 
 \columnbreak
 \subsection{k-fold Cross-Validation}
-\includegraphics[width=\linewidth]{./img/k_fold.png}
+\includegraphics[width=\linewidth]{k_fold.png}
 \textbf{With k-Fold Cross-Validation}\\
-\includegraphics[width=\linewidth]{./img/k_fold2.png}
+\includegraphics[width=\linewidth]{k_fold2.png}
 
 \subsubsection{Some Comments}
 \begin{itemize}
@@ -27,17 +27,18 @@
     \item Each neuron has its own input weights $[w_1, w_2, ...]$ and \textbf{bias} b
     \item Calculates the sum of the weighted input (dot product $\vec{x} * \vec{w}$), adds a bias b, and passes it through a nonlinear activiation function
 \end{itemize}
-\includegraphics[width=\linewidth]{./img/artificial_neurons.png}
+\includegraphics[width=\linewidth]{artificial_neurons.png}
 
 \subsection{Simple ANN}
-\includegraphics[width=\linewidth]{./img/ann.png}
+\includegraphics[width=\linewidth]{ann.png}
 
 \subsection{Traning an ANN}
 \textbf{Supervised learning}
 \begin{itemize}
+    \item Data with label
     \item For each input $\vec{x}$ we are given the output $\vec{y}$
     \item ANN is initialized with random weights
     \item An optimizer reduces a cost-function (e.g. MSE)
     \item At every iteration, and for every single weight $w$ and bias $b$, the partial derivative needs to be calculated. (Backpropagation)
 \end{itemize}
-\includegraphics[width=\linewidth]{./img/train_ann.png}
+\includegraphics[width=\linewidth]{train_ann.png}

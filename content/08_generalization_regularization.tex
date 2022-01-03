@@ -7,7 +7,7 @@
     \item A good model has a low Generalization Error
     \item Overfitting happens if the MSE of Training Error is small thanks to a complex model but the Generalization Error is large
 \end{itemize}
-\includegraphics[width=0.9\linewidth]{./img/overfitting.png}
+\includegraphics[width=0.9\linewidth]{overfitting.png}
 
 \subsection{Underfitting}
 \begin{itemize}
@@ -16,7 +16,7 @@
     \item Generalization Error is large
 \end{itemize}
 
-\includegraphics[width=0.9\linewidth]{./img/underfitting.png}
+\includegraphics[width=0.9\linewidth]{underfitting.png}
 
 \subsection{Training-Set, Test-Set, Model Evaluation}
 \begin{itemize}
@@ -28,11 +28,11 @@
         \item Test-Set (~20\% of data)
     \end{itemize}
 \end{itemize}
-\textbf{Training:} 
+\textbf{Training:}
 \begin{itemize}
     \item Fit the model to the training set
     \item This minimizes the in-sample error
-\end{itemize} 
+\end{itemize}
 \textbf{Evaluating}
 \begin{itemize}
     \item Using the Test-Set
@@ -41,7 +41,7 @@
 \end{itemize}
 
 \subsection{Bias-Variance Trade-off}
-\textbf{Variance:} Difference of fits between data sets.\\ 
+\textbf{Variance:} Difference of fits between data sets.\\
 \textbf{Bias:} Results that are systematically prejudiced due to faulty assumptions.\\
 
 \textbf{High Bias}
@@ -53,7 +53,7 @@
     \item The model is relatively stable
     \item Very simular model if trained with new data
 \end{itemize}
-\includegraphics[width=0.6\linewidth]{./img/bias_variance.png}\\
+\includegraphics[width=0.6\linewidth]{bias_variance.png}\\
 \textbf{Low Bias}
 \begin{itemize}
     \item A more complex model can better explain the data
@@ -63,7 +63,7 @@
     \item Given a new datapoint, the MSE can be very large
     \item For a different set with more datapoints, the model may be very different
 \end{itemize}
-\includegraphics[width=0.6\linewidth]{./img/bias_variance2.png}
+\includegraphics[width=0.6\linewidth]{bias_variance2.png}
 
 \subsubsection{Trade-off}
 \begin{itemize}
@@ -73,7 +73,7 @@
     \item The model can only be as complex as the data permits
     \item You have to find an optimal balance between bias and variance
 \end{itemize}
-\includegraphics[width=0.6\linewidth]{./img/tradeoff.png}
+\includegraphics[width=0.6\linewidth]{tradeoff.png}
 
 \subsection{Regularization}
 \begin{itemize}
@@ -88,4 +88,4 @@
 \begin{center}
     $\displaystyle\sum_{i = 1}^{n} (y_i - \displaystyle\sum_{j = 1}^{p} x_{ij}\beta_j)^2 + \lambda \displaystyle\sum_{j = 1}^{p}\beta_j^2$
 \end{center}
-\includegraphics[width=1\linewidth]{./img/regularization.png}
+\includegraphics[width=1\linewidth]{regularization.png}
