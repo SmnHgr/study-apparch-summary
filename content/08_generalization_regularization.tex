@@ -1,11 +1,14 @@
-\section{Generalization \& Regularization}
+\section{Generalization and Regularization}
+\begin{itemize}
+    \item \textcolor{blue}{Out-of-sample Error} Generalization Error (Test Error) is the MSE of new Data
+    \item A good model has a low Generalization Error
+\end{itemize}
+
 \subsection{Overfitting}
 \begin{itemize}
     \item A model that perfectly fits the data does not have to be perfect
-    \item In-Sample Error (Trainig error) was minimized (MSE = 0)
-    \item Out-of-sample Error (Generalization Error, Test Error) is the MSE of new Data
-    \item A good model has a low Generalization Error
-    \item Overfitting happens if the MSE of Training Error is small thanks to a complex model but the Generalization Error is large
+    \item In-Sample Error (Training error) was minimized (MSE = 0)
+    \item Overfitting happens if the MSE of Training Error is small thanks to a complex model but the Generalization Error is large (Good with training data, bad with testing data)
 \end{itemize}
 \includegraphics[width=0.9\linewidth]{overfitting.png}
 
@@ -20,15 +23,14 @@
 
 \subsection{Training-Set, Test-Set, Model Evaluation}
 \begin{itemize}
-    \item The Generalization Error can't be calculated
-    \item But Estimated
+    \item The Generalization Error can't be calculated, but estimated
     \item Split the data into 2 sets
     \begin{itemize}
         \item Training-Set (~80\% of data)
         \item Test-Set (~20\% of data)
     \end{itemize}
 \end{itemize}
-\textbf{Training:}
+\textbf{Training}
 \begin{itemize}
     \item Fit the model to the training set
     \item This minimizes the in-sample error
@@ -36,13 +38,11 @@
 \textbf{Evaluating}
 \begin{itemize}
     \item Using the Test-Set
-    \item Produces the Test-Error
+    \item Produces the \textcolor{blue}{Test-Error}
     \item This is an estimate of the Generalization Error
 \end{itemize}
 
 \subsection{Bias-Variance Trade-off}
-\textbf{Variance:} Difference of fits between data sets.\\
-\textbf{Bias:} Results that are systematically prejudiced due to faulty assumptions.\\
 
 \textbf{High Bias}
 \begin{itemize}
@@ -51,7 +51,7 @@
 \textbf{Low Variance}
 \begin{itemize}
     \item The model is relatively stable
-    \item Very simular model if trained with new data
+    \item Very similar model if trained with new data
 \end{itemize}
 \includegraphics[width=0.6\linewidth]{bias_variance.png}\\
 \textbf{Low Bias}
@@ -76,14 +76,18 @@
 \includegraphics[width=0.6\linewidth]{tradeoff.png}
 
 \subsection{Regularization}
+
+Technique to measure the model complexity
 \begin{itemize}
-    \item Technique to control the model complexity
-    \begin{itemize}
-        \item Add a penalty term to the Loss
-        \item More complex models get a higher penalty
-        \item Add a constrain to the optimization process
-        \item \textit{regularized loss} = \textit{MSE + $\lambda$ model-complexity}
-    \end{itemize}
+    \item L1 - Norm $\displaystyle\sum_{j = 1}^{p} |\beta_j|$
+    \item L2 - Norm $\displaystyle\sum_{j = 1}^{p}\beta_j^2$
+\end{itemize}
+Technique to control the model complexity
+\begin{itemize}
+    \item Add a penalty term to the Loss (optimization problem)
+    \item More complex models get a higher penalty
+    \item Add a constrain to the optimization process
+    \item Modified optimization error target \textit{regularized loss} = \textit{MSE + $\lambda$ model-complexity}
 \end{itemize}
 \begin{center}
     $\displaystyle\sum_{i = 1}^{n} (y_i - \displaystyle\sum_{j = 1}^{p} x_{ij}\beta_j)^2 + \lambda \displaystyle\sum_{j = 1}^{p}\beta_j^2$
