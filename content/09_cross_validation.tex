@@ -1,44 +1,41 @@
-\section{Cross-Validation}
-\textbf{Problem with 80/20 Data Separation}
+\section{Cross-Validation (CV)}
+
+\begin{itemize}
+    \item a technique to compare (and select from) different models (=different parameter values)
+    \item Use case 1: Obtain a better estimate of the generalization error
+    \item Use case 2: Selection of hyper parameters, split/train pattern of cross validation can be used to find optimal hyper parameters
+\end{itemize}
+
+\textbf{Problem with (80/20) Data Separation}
 \begin{itemize}
     \item Test Error depends on random set
-    \item For different Set, the test error would be different
+    \item For different sets, the test error would be different
 \end{itemize}
-\textbf{With Cross-Validation we can obtain a better estimate of the generalization error}
 
-\columnbreak
-\subsection{k-fold Cross-Validation}
+without cross-validation
+
 \includegraphics[width=\linewidth]{k_fold.png}
-\textbf{With k-Fold Cross-Validation}\\
+
+\subsection{k-fold Cross-Validation}
+
+With k-Fold Cross-Validation\\
+
+\begin{itemize}
+    \item The data is split once into k folds
+    \item Repeats the split-train-test procedure k times, using a systematic resampling procedure
+    \item Then train/test is repeated k-times.
+    \item Each fold participates in k-1 training phases and is used once for testing
+\end{itemize}
+
 \includegraphics[width=\linewidth]{k_fold2.png}
 
-\subsubsection{Some Comments}
 \begin{itemize}
     \item Typical Values for k are 5,10 or N
     \item The data of a fold does not change during procedure
     \item Do not preprocess the whole dataset
-    \item Apply the preprocessing pipe-line to each split
+    \item Apply the preprocessing pipeline (standardization) to each split
+    \item Each split generates a different model
+    \item With regularization, each split may yield a different  model and a different optimal $\lambda$
 \end{itemize}
 
-\section{Artificial Neural Networks (ANN)}
-\subsection{Artificial Neurons}
-\begin{itemize}
-    \item Receives an input vector $[x_1,x_2, ...]$
-    \item Each neuron has its own input weights $[w_1, w_2, ...]$ and \textbf{bias} b
-    \item Calculates the sum of the weighted input (dot product $\vec{x} * \vec{w}$), adds a bias b, and passes it through a nonlinear activiation function
-\end{itemize}
-\includegraphics[width=\linewidth]{artificial_neurons.png}
-
-\subsection{Simple ANN}
-\includegraphics[width=\linewidth]{ann.png}
-
-\subsection{Traning an ANN}
-\textbf{Supervised learning}
-\begin{itemize}
-    \item Data with label
-    \item For each input $\vec{x}$ we are given the output $\vec{y}$
-    \item ANN is initialized with random weights
-    \item An optimizer reduces a cost-function (e.g. MSE)
-    \item At every iteration, and for every single weight $w$ and bias $b$, the partial derivative needs to be calculated. (Backpropagation)
-\end{itemize}
-\includegraphics[width=\linewidth]{train_ann.png}
+\includegraphics[width=\linewidth]{learning-model.png}
