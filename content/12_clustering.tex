@@ -6,11 +6,12 @@
     \item \textbf{The goal} of unsupervised learning is to self-discover patterns from the data
 \end{itemize}
 
-\subsection{Clusters}
+\textbf{Clusters}
 \begin{itemize}
     \item Data points which have shared properties
     \item Fall into one cluster or one alike group
     \item Similar Data Points are close together
+    \item Group $n$ data points into $k_c$ number of clusters
 \end{itemize}
 \textbf{Applications}
 \begin{itemize}
@@ -22,7 +23,9 @@
 \subsection{Naive K-means}
 \includegraphics[width=\linewidth]{k-means.png}
 
-\subsubsection{Stopping Criterion}
+\includegraphics[width=\linewidth]{clusters-formal-maths.png}
+
+\textbf{Stopping Criterion}
 \begin{itemize}
     \item When centres don't change (time consuming)
     \item The datapoints assigned to specific cluster remains the same (takes too much time)
@@ -30,7 +33,7 @@
     \item Fixed number of iterations have reached (choose wisely)
 \end{itemize}
 
-\subsubsection{Initialization}
+\textbf{Initialization}
 \begin{itemize}
     \item Performance depends on the random initialization
     \item Some seeds can result in a poor convergence rate
@@ -39,42 +42,52 @@
     \item Initialize randomly, run multiple times
 \end{itemize}
 
-\subsubsection{Standardization of data}
+\textbf{Standardization of data}
 \begin{itemize}
     \item Features with large values may dominate the distance value
     \item Features over small values will have no impact
     \item Normalize values!
 \end{itemize}
 
-\subsubsection{Sklean k-means}
+\subsection{Sklean k-means}
 \textbf{Initialization}
 \begin{itemize}
     \item Init = K-means++
     \item Only initialization of the centroids will change
     \item Chosen centroids should be far from each other
 \end{itemize}
-\textbf{max\_iter:}
+\textbf{max\_iter}
 \begin{itemize}
     \item Number of iterations before stopping
 \end{itemize}
-\textbf{n\_init:}
+\textbf{n\_init}
 \begin{itemize}
     \item Number of time the k-means algorithm will be run with different centroid seeds
 \end{itemize}
 
-\subsubsection{Evaluating Cluster Quality}
+\subsection{Evaluate Cluster Quality}
 \begin{itemize}
     \item Make clusters so that for each cluster the distance of each cluster member from its center is minimizes
 \end{itemize}
 \textbf{Inertia or within-cluster sum-of-squares (WCSS)}
 \begin{itemize}
-    \item Sum of squared distances to center
+    \item Sum of squared distances of samples (each point) to their closest center
     \item As small as possible
 \end{itemize}
+
+\begin{minipage}[t]{0.5\linewidth}
+    \includegraphics[width=\linewidth]{wcss-diagram.png}
+\end{minipage}
+\begin{minipage}[t]{0.5\linewidth}
+    \includegraphics[width=\linewidth]{wcss-table.png}
+\end{minipage}
+
+
 \textbf{Silhouette Score}
 \begin{itemize}
     \item How far the datapoints in one cluster are from the datapoints in another cluster
-    \item SS of a point: $\frac{b-a}{max(a,b)}$
+    \item Silhouette Score of a point: $\frac{b-a}{max(a,b)}$
     \item a: average intra-cluster distance (distance between each point within)
     \item b: average inter-cluster distance (distance between a cluster and its nearest neighbour)
 \end{itemize}
+\includegraphics[width=\linewidth]{silhouette-score.png}
