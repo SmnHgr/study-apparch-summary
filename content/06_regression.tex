@@ -2,13 +2,18 @@
 a simple method to analyse data \\
 
 \begin{itemize}
-    \item Only consideres a linear relationship between input and output
+    \item Only considers a linear relationship between input and output
     \item In the simplest case, $x$ and $y$ are scalars and the linear model therefore has only two free parameters
     \item The goal is to identify $a$ (slope) and $b$ (intercept) for which the linear model best explains the data
 \end{itemize}
 \begin{center}
     $\hat{y_i} = ax_i + b$
 \end{center}
+
+Other examples
+
+Squared: $\hat{y_i} = w_2 * x_i^2 + w_1 * x_i + w_0$\\
+Cubic: $\hat{y_i} = w_3 * x_i^3 + w_2 * x_i^2 + w_1 * x_i + w_0$\\
 
 \textbf{Applications}
 \begin{itemize}
@@ -39,8 +44,9 @@ Instead of approximating $y_i$, we calculate an \textcolor{blue}{estimate} $\hat
     $\hat{y_i} = ax_i + b$\\
     $e_i = y_i - \hat{y_i}$ \\
     The difference $e_i$, called residual\\
-    $E = \frac{1}{2N} * \displaystyle\sum_{i = 1}^{N} e_i^2$\\
-    $E = \frac{1}{2N} * \large\displaystyle\sum_{i = 1}^{N}({y_i} - (a*x_i + b))^2$
+    $MSE = \frac{1}{2N} * \displaystyle\sum_{i = 1}^{N} e_i^2$\\
+    $MSE = \frac{1}{2N} * \displaystyle\sum_{i = 1}^{N} (y_i - \hat{y_i})^2$\\
+    $MSE = \frac{1}{2N} * \large\displaystyle\sum_{i = 1}^{N}({y_i} - (a*x_i + b))^2$
 \end{center}
 
 \subsection{Correlation \sout{and Causality}}

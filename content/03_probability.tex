@@ -22,6 +22,12 @@ $P(X=x)$ / $P(x)$: $1/6$ for each possible value
 E.g. Dice1 = 5 AND Dice2 = 4\\
 $P_{XY}(5,4) = P_X(5) * P_Y(4) = 1/6 * 1/6 = 1/36$\\
 \includegraphics[width=0.5\linewidth]{joint_probability.png} \\
+
+\textbf{Marginal Probability} \\
+Marginal probability is the probability of an event irrespective of
+the outcome of another variable. Can be calculated from the
+Joint Probability. (Spalte von Joint Probability) \\
+
 \textbf{Independant random Variables}
 \begin{itemize}
     \item Joint Probability is the product of the individual probabilities
@@ -41,6 +47,10 @@ $P(X,Y,Z) = P(X) * P(Y) * P(Z)$ (only if independant)\\
     \item X is observed, its value is fixed
     \item Calculate the probabilities of Y given X: $P(Y | X)$
 \end{itemize}
+
+\textcolor{red}{Important: Do not just read the selected data point (e.g. 0.05), if the total value of the column is not 1}\\
+E.g. $P(Y | X) = 0.05 / 0.35 (column sum) = 0.1428 = 14.28\%$
+
 $P(X, Y) = P(X | Y) * P(Y)$\\
 $P(X, Y) = P(Y | X) * P(X)$\\
 $P(Y | X) = \frac{P(X,Y)}{P(X)}$\\
@@ -55,4 +65,4 @@ Wahrscheinlichkeitsfunktion, a function f(x) that provides the probability for e
 variable $X$ \\
 
 Graph of a PMF \\
-\includegraphics[width=0.2\linewidth]{pmf-graph.png} \\
+\includegraphics[width=0.4\linewidth]{pmf-graph.png} \\

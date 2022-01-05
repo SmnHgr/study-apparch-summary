@@ -6,6 +6,42 @@
     \item Understanding written text became BIG business (search-engines)
     \item Generating human-like conversations is still very hard
 \end{itemize}
+
+\subsection{Dialogflow}
+\textbf{Intents}
+An intent categorizes an end-user's intention for one conversation turn.
+\begin{itemize}
+    \item Recognizes the need of a user
+    \item Require training to match to user inputs
+    \item Follow up Intents (on Success)
+    \item Fallback Intents (on Failure)
+\end{itemize}
+\textbf{Entities}
+Each intent parameter has a type, called the entity type, which dictates exactly how data from an end-user expression is extracted.
+\begin{itemize}
+    \item Extract information from user inputs
+    \item Help to identify required intent
+    \item \textcolor{blue}{System Entities} Date and time / Numbers / Amounts / Units / etc.
+    \item \textcolor{blue}{Developer Entities} defined by list of words (@pizza-type / @drink / etc.)
+    \item \textcolor{blue}{User Entities} transient, temporary Information based on Conversation (@previous-orders)
+\end{itemize}
+\textbf{Dialog}
+\begin{itemize}
+    \item \textcolor{blue}{Linear} Gather a list of information
+    \item \textcolor{blue}{Non Linear} Using Contexts, more a real conversation with dependent answers based on given context. Context can be set as Input and Ouput.
+\end{itemize}
+\textbf{Context}
+\begin{itemize}
+    \item Each Intent can have Input \& Output Context
+    \item Intents are active based on active Context
+    \item Expire automatically
+\end{itemize}
+\textbf{Fulfillment}
+\begin{itemize}
+    \item Action triggered on fullfilled Intents
+    \item e.g. Webhook
+\end{itemize}
+
 \subsection{4 Ingredients of Machine Learning}
 \textbf{1. Data}
 \begin{itemize}
@@ -48,10 +84,10 @@ For successful ML, there are many more ingredients ...\\
 \end{itemize}
 
 \subsection{Representation of Words}
-Vectors can be used to represent words based on their meaning.
+Vectors can be used to represent words based on their meaning \textcolor{blue}{Word embedding}.
 \subsubsection{One-hot representation}
 \begin{itemize}
-    \item Vector with a single 1-Value
+    \item A vertical Vector with a single 1-Value
     \item All other Values are set to 0
     \item Count the Number of different Words, Define one unique vector per word
 \end{itemize}
@@ -64,14 +100,14 @@ fett: $\begin{bmatrix} 0\\ 0\\ 0\\ 1\\ 0\end{bmatrix}$
 \textbf{Disadvantages}
 \begin{itemize}
     \item Very high dimensional vector space (1 Dimension / unique Word)
-    \item Sparse Representation: Each vector has a single 1 and $N$ Zeroes. (Memory Inefficient)
+    \item \textcolor{blue}{Sparse Representation} Each vector has a single 1 and $N$ Zeroes. (Memory Inefficient)
     \item No Generalization: All words are unrelated to each other.
     \item Does not capture any aspect of the meaning of a word
 \end{itemize}
 
 \subsubsection{Indexing}
 Make a list of words (optionally alphabetically). Use the index to represent each word.\\
-\textbf{Example:}\\
+\textbf{Example}\\
 \textit{Dini Mom isch fett.}\\
 Dini: $0$, Mom: $1$, isch: $2$, fett: $3$, '.': $4$
 \begin{itemize}

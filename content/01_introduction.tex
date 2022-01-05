@@ -6,7 +6,8 @@
 \begin{itemize}
     \item broad concept
     \item different interpretations
-    \item we do not have a definition of inteligence
+    \item we do not have a definition of intelligence
+    \item a hypothetical computer program that can perform intellectual tasks as well or better than a human
 \end{itemize}
 \textbf{Statistical machine learning}
 \begin{itemize}
@@ -41,45 +42,6 @@
     \item The difference in fits between training and testing set (different data sets in general)
     \item \textcolor{blue}{Low variance} Sum of Squares are very similar for different datasets
 \end{itemize}
-The ideal ML algorithm has low bias and can accurately model the true relationship and it has low variability by producing consistent predictions across different datasets.
-
-\subsection{Tasks and Algorithms of Machine Learning}
-\includegraphics[width=\linewidth]{machine_learning_sections.png}
-
-\subsection{Dialogflow}
-\textbf{Intents}
-An intent categorizes an end-user's intention for one conversation turn.
-\begin{itemize}
-    \item Recognizes the need of a user
-    \item Require training to match to user inputs
-    \item Follow up Intents (on Success)
-    \item Fallback Intents (on Failure)
-\end{itemize}
-\textbf{Entities}
-Each intent parameter has a type, called the entity type, which dictates exactly how data from an end-user expression is extracted.
-\begin{itemize}
-    \item Extract information from user inputs
-    \item Help to identify required intent
-    \item \textcolor{blue}{System Entities} Date and time / Numbers / Amounts / Units / etc.
-    \item \textcolor{blue}{Developer Entities} defined by list of words (@pizza-type / @drink / etc.)
-    \item \textcolor{blue}{User Entities} transient, temporary Information based on Conversation (@previous-orders)
-\end{itemize}
-\textbf{Dialog}
-\begin{itemize}
-    \item \textcolor{blue}{Linear} Gather a list of information
-    \item \textcolor{blue}{Non Linear} Using Contexts
-\end{itemize}
-\textbf{Context}
-\begin{itemize}
-    \item Each Intent can have Input \& Output Context
-    \item Intents are active based on active Context
-    \item Expire automatically
-\end{itemize}
-\textbf{Fulfillment}
-\begin{itemize}
-    \item Action triggered on fullfilled Intents
-    \item e.g. Webhook
-\end{itemize}
 \textbf{Predictive modeling} Train model for predictions \\
 \textbf{Feature Engineering}
 \begin{itemize}
@@ -88,7 +50,11 @@ Each intent parameter has a type, called the entity type, which dictates exactly
 \end{itemize}
 \textbf{Deep neural network} ANNs with multiple hidden layers \\
 
-\textbf{Feature} e.g. Years of working experience, school grades
+\textbf{Feature} e.g. Years of working experience, school grades \\
+The ideal ML algorithm has low bias and can accurately model the true relationship and it has low variability by producing consistent predictions across different datasets.
+
+\subsection{Tasks and Algorithms of Machine Learning}
+\includegraphics[width=\linewidth]{machine_learning_sections.png}
 
 \subsection{7 Steps of Machine Learning}
 \begin{enumerate}

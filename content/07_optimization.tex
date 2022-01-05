@@ -17,16 +17,12 @@ By repeating this procedure, we will eventually arrive at the location where the
     \item At each iteration, we would have to iterate over all $N = 1'000$ points to calculate the gradient of the loss function.
 \end{itemize}
 
-\textbf{Calculate Gradient}
-
+\textbf{MSE formula}
 \begin{center}
-    $
-    \textrm{Gradient of E} = \begin{bmatrix}
-                                 \frac{\partial E}{\partial a} \\
-                                 \frac{\partial E}{\partial b} \\
-    \end{bmatrix}
-    $
+    $E = \frac{1}{2N} * \large\displaystyle\sum_{i = 1}^{N}(\hat{y_i} - (a*x_i + b))^2$
 \end{center}
+
+\textbf{Gradient of E}
 
 Calculate these two partial derivatives
 
@@ -50,6 +46,32 @@ Calculate these two partial derivatives
      \end{bmatrix}
     $
 \end{center}
+
+\textbf{Update Rule}
+
+\begin{center}
+    $
+    \begin{bmatrix}
+        a \\
+        b \\
+    \end{bmatrix}_{t+1}
+    =    \begin{bmatrix}
+             a \\
+             b \\
+    \end{bmatrix}_{t} - \alpha
+    \begin{bmatrix}
+        \frac{\partial E}{\partial a} \\
+        \frac{\partial E}{\partial b} \\
+    \end{bmatrix} \Big\rvert _{\begin{bmatrix}
+                                   a \\
+                                   b \\
+    \end{bmatrix}_{t} }
+    $
+\end{center}
+\\
+The algorithm starts at some initial position $[a, b]_{t0}$.
+Then, the update rule is applied repeatedly.
+The number of update steps needed to come ``close enough'' to the minimum depends on the problem.
 
 \subsection{Stochastic Gradient Descent (SGD)}
 we do not need the exact gradient to find a trajectory toward the minimum. Instead, at each iteration we can randomly pick a few datapoints and use them to calculate an approximation of the gradient.
