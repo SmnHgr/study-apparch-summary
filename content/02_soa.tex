@@ -30,16 +30,22 @@ Angebot einer Geschäftsprozess oder IT-Dienstleistung, Zugriff über eine klar 
 
 \includegraphics[width=\linewidth]{soa-soa-dreieck.png}
 
+\columnbreak
 \subsubsection{Service Modellierung (SoaML)}
 
 \textbf{Service-oriented architecture Modeling Language (SoaML)}
 
 \includegraphics[width=\linewidth]{soa-modeling.png} \\
 
+Beispiel
+
+\includegraphics[width=\linewidth]{soa-example.png} \\
+
 \textbf{Sequenzdiagramm}
 
 \includegraphics[width=0.7\linewidth]{soa-sequence-diagram.png}
 
+\columnbreak
 \subsubsection{Synchrone Web Services}
 
 \textbf{SOAP}
@@ -76,10 +82,10 @@ REST-basierter flexibler Datendienst, basiert auf Metadaten, Bietet Datenressour
 
 Query-Sprache, erlaubt gezielte Bearbeitung von Daten, Schema Definition Language, kann Daten aus mehreren Ressourcen zusammennehmen, Arbeitet mit HTTP - POST
 
-
+\columnbreak
 \subsubsection{Asynchrone Kommunikation}
 
-Kommunikation mittels Nachrichten (Messages), Sender und Empfänger sind zeitlich entkoppelt, ermöglicht hohe Parallelität mit geringen Ressourcenverbrauch, \textcolor{blue}{Kommunikation mittels Message Oriented Middleware (MOM)}
+Kommunikation mittels Nachrichten (Messages), Sender und Empfänger sind zeitlich entkoppelt, ermöglicht hohe Parallelität mit geringen Ressourcenverbrauch, \textcolor{blue}{Kommunikation mittels Message Oriented Middleware (MOM)} \\
 
 Vorteile
 
@@ -106,10 +112,50 @@ verwaltet diverse Queues. Er vermittelt und speichert die erhaltenen Nachrichten
 
 \textcolor{blue}{RabbitMQ} Open Source, Message Store, Message Passing (One-Way) oder Request-Reply
 
-\includegraphics[width=\linewidth]{soa-rabbitmq-1.png}
+\includegraphics[width=0.8\linewidth]{soa-rabbitmq-1.png}
 
-\includegraphics[width=\linewidth]{soa-rabbitmq-2.png}
+\includegraphics[width=0.8\linewidth]{soa-rabbitmq-2.png} \\
 
+Publish
+\begin{lstlisting}
+asyncapi: 2.2.0
+info:
+  title: Hello world application
+  version: '0.1.0'
+channels:
+  hello:
+    publish:
+      message:
+        payload:
+          type: string
+          pattern: '^hello .+$'
+\end{lstlisting}
+\vspace{10pt}
+\columnbreak
+Subscribe
+\begin{lstlisting}
+asyncapi: 2.2.0
+info:
+  title: Example
+  version: 0.1.0
+channels:
+  user/signedup:
+    subscribe:
+      message:
+        description: An event describing
+        payload:
+          type: object
+          additionalProperties: false
+          properties:
+            fullName:
+              type: string
+            email:
+              type: string
+              format: email
+            age:
+              type: integer
+              minimum: 18
+\end{lstlisting}
 
 \subsubsection{Elektronische Nachricht}
 
@@ -143,7 +189,7 @@ Definiert die verwendete Codetabelle für die Bitfolgen je Zeichen, Bitfolge fü
 \begin{itemize}
     \item \textcolor{blue}{ASCII} ANSI-Standard
     \item \textcolor{blue}{EBCDIC} IBM-Standard
-    \item \textcolor{blue}{Unicode} internationaler Standard, jedes Zeichen in der Welt hat eine fixe Bitkombination: 8 / 16 oder 32 bit, UTF-8 hat variable Länge von 1, 2 oder 4 Bytes
+    \item \textcolor{blue}{Unicode} internationaler Standard, jedes Zeichen in der Welt hat eine fixe Bitkombination: 8 / 16 oder 32 bit, UTF-8
 \end{itemize}
 
 \includegraphics[width=\linewidth]{soa-message-example.png}
@@ -206,6 +252,7 @@ End-zu-End Verschlüsselung
     \item \textcolor{blue}{API-Monitoring und Analytics} Monitoring und automatisches Logging für die Überwachung
 \end{itemize}
 
+\columnbreak
 \subsubsection{Prüfungsfragen}
 
 \begin{itemize}

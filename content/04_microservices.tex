@@ -18,7 +18,7 @@ Nachteile
 \vspace{10pt}
 \textbf{Self-Contained System (SCS) Microservices}
 
-SCS nimmt eine vertikale Aufteilung der Applikation in fachliche Funktionen vor, wie z.B. Artikelservice, Kundenservice, Bestellservice usw. Enthalten alle notwendigen Schichten analog der Mehrschichtenarchitektur (Applikation wird in mehrere unabhängige Systeme aufgeteilt), jedes SCS ist eine unabhängige Web-Applikation mit eigenem GUI, Kommunikation zwischen SCS erfolgt per default asynchron, jedes SCS hat eigenständige Logik und Daten
+SCS nimmt eine vertikale Aufteilung der Applikation in fachliche Funktionen vor, wie z.B. Artikelservice, Kundenservice, Bestellservice usw. Enthalten alle notwendigen Schichten analog der Mehrschichtenarchitektur (Applikation wird in mehrere unabhängige Systeme aufgeteilt), jedes SCS ist eine unabhängige Web-Applikation mit eigenem GUI, Kommunikation zwischen SCS erfolgt per default asynchron, jedes SCS hat eigenständige Logik und Daten \\
 
 Vorteile
 \begin{itemize}
@@ -30,7 +30,7 @@ Vorteile
 \vspace{10pt}
 \textbf{Microservice}
 
-1 SCS kann aus 1-x Microservices bestehen, Bildet eine eigenständige fachlich klar fokussierte, eingegrenzten (Teil)funktion einer Applikation ab, Ihm steht ein eigener Ausführungscontainer/Laufzeitumgebung (Docker) zur Verfügung, Der Zugriff erfolgt über eine klar definierte synchrone und/oder asynchrone Schnittstelle
+1 SCS kann aus 1-x Microservices bestehen, Bildet eine eigenständige fachlich klar fokussierte, eingegrenzten (Teil)funktion einer Applikation ab, Ihm steht ein eigener Ausführungscontainer/Laufzeitumgebung (Docker) zur Verfügung, Der Zugriff erfolgt über eine klar definierte synchrone und/oder asynchrone Schnittstelle \\
 
 Vorteile
 \begin{itemize}
@@ -77,32 +77,33 @@ Ist eine Vorgehensweise, um in komplexen Applikationen im strategischen Design d
     \item Domain Events herausfinden
 \end{itemize}
 
+\columnbreak
 \subsubsection{Makroarchitektur}
 
 \textbf{UI}
 
 Microservice hat sein eigenes UI
 
-\includegraphics[width=\linewidth]{microservices-ui-1.png} \\
+\includegraphics[width=0.8\linewidth]{microservices-ui-1.png} \\
 
 Microservice gibt spezifischen Anteil zu UI Rahmen
 
-\includegraphics[width=\linewidth]{microservices-ui-2.png} \\
+\includegraphics[width=0.8\linewidth]{microservices-ui-2.png} \\
 
-Microservies haben kein UI sondern nur Service-Schnittstelle, realisiert durch UI Full Client
+Microservies haben kein UI sondern nur Service-Schnittstelle, dieses wird stattdessen realisiert durch UI Full Client
 
-\includegraphics[width=\linewidth]{microservices-ui-3.png}
+\includegraphics[width=0.8\linewidth]{microservices-ui-3.png}
 
 
 \textbf{Persistenz}
 
 Microservices haben eigene DB
 
-\includegraphics[width=\linewidth]{microservices-persistence-1.png} \\
+\includegraphics[width=0.8\linewidth]{microservices-persistence-1.png} \\
 
 Zentraler DB-Service
 
-\includegraphics[width=\linewidth]{microservices-persistence-2.png} \\
+\includegraphics[width=0.8\linewidth]{microservices-persistence-2.png} \\
 
 \textbf{Referenz-Makroarchitekturen}
 
@@ -125,6 +126,8 @@ Full Server-Stack Microservices (Microservices als SCS)
     \item \textcolor{blue}{Kommunikation} asynchrones Messaging über die MOM (Message Oriented Middleware), Zugriff auf Service Provider über einen zentralen proxy Microservice
 \end{itemize}
 \vspace{10pt}
+\vfill\null
+\columnbreak
 Full Client mit eigener Persistenz
 
 eignet sich bei Angebot unterschiedlicher App-Arten
@@ -137,7 +140,7 @@ Eignet sich bei der Migration einer bestehenden Mehrschichtenarchitektur in eine
 
 \includegraphics[width=\linewidth]{microservices-full-client-2.png}
 
-\textbf{Beispiel}
+\textbf{Beispiele}
 
 \includegraphics[width=\linewidth]{microservices-example.png}
 
@@ -153,7 +156,10 @@ Eignet sich bei der Migration einer bestehenden Mehrschichtenarchitektur in eine
     \item \textcolor{blue}{? Login, Identität} ist Querschnitts-Microservice, der Login-Daten persistent hält
     \item \textcolor{blue}{Proxy Services} Für die Kommunikation zu den beiden applikationsexternen Service Provider existieren je eine eigene Proxy-Komponente, welche in einem Microservice vereint sind
 \end{itemize}
+\vspace{10pt}
+\includegraphics[width=\linewidth]{microservices-example-cars.png}
 
+\columnbreak
 \subsubsection{Microarchitektur}
 
 Jeder Mikroservices hat sein eigener Technologie-Stack, Dieser ist auf das zu beschränken, was benötigt wird
@@ -175,6 +181,7 @@ mit Docker
 
 \includegraphics[width=\linewidth]{microservices-docker.png}
 
+\columnbreak
 \subsubsection{Prüfungsfragen}
 
 \begin{itemize}
