@@ -30,6 +30,7 @@ Virtuelle Desktops (VMware, Citrix), Werden im Webbrowser oder in View Clients b
 
 Klassische Desktop Apps, Haben meist nebst Applikationslogik, lokale Datenhaltung \\
 
+\vfill\null
 \columnbreak
 \subsubsection{Location-L}
 
@@ -59,6 +60,9 @@ bessere Testbarkeit der Komponenten und vollständiges Entkoppeln der View von d
 Web App
 
 \includegraphics[width=\linewidth]{clients-mvvm.png} \\
+
+\vfill\null
+\columnbreak
 
 \subsubsection{Programmiersprachtypen}
 
@@ -95,7 +99,6 @@ Nachteile
     \item Je Plattform ein eigenes Entwicklerteam
 \end{itemize}
 
-\columnbreak
 \subsubsection{Client WebApps}
 
 Ausführung im Web Browser
@@ -112,12 +115,14 @@ Webbrowser startet als unsichtbarer Container anhand der Informationen im Manife
 
 \includegraphics[width=\linewidth]{clients-pwa.png} \\
 
-\columnbreak
 \textbf{Serverframework ASP.NET Core}
 
 ASP – Active Server Page mit MVC Muster, Kestrel fungiert als Webserver
 
 \includegraphics[width=\linewidth]{clients-asp.png} \\
+
+\vfill\null
+\columnbreak
 
 \textbf{Serverframework Java EE}
 
@@ -129,15 +134,53 @@ JSF – Java Server Faces, zusätzlich Frameworks wie z.B. Spring usw., EJBs ent
 
 \includegraphics[width=\linewidth]{clients-macro-arch.png} \\
 
-Beispiel
+\vfill\null
+\columnbreak
 
-\includegraphics[width=1.7\linewidth]{clients-example-cars.png} \\
+\textbf{UI}
 
-\textbf{Strukturierungsoptionen für das GUI}
+Microservice hat sein eigenes UI
+
+\includegraphics[width=0.8\linewidth]{microservices-ui-1.png} \\
+
+Microservice gibt spezifischen Anteil zu UI Rahmen
+
+\includegraphics[width=0.8\linewidth]{microservices-ui-2.png} \\
+
+Microservies haben kein UI sondern nur Service-Schnittstelle, dieses wird stattdessen realisiert durch UI Full Client
+
+\includegraphics[width=0.8\linewidth]{microservices-ui-3.png} \\
+
+\textcolor{blue}{Strukturierungsoptionen für das GUI}
 
 \includegraphics[width=\linewidth]{clients-gui-structures.png}
 
+
+\vfill\null
 \columnbreak
+
+Beispiel
+
+\includegraphics[width=2.1\linewidth]{clients-example-cars.png} \\
+
+Full Client mit eigener Persistenz
+
+eignet sich bei Angebot unterschiedlicher App-Arten
+
+\includegraphics[width=\linewidth]{microservices-full-client.png}
+
+Full Client mit separater Persistenz
+
+Eignet sich bei der Migration einer bestehenden Mehrschichtenarchitektur in eine Microservice-Umgebung
+
+\includegraphics[width=\linewidth]{microservices-full-client-2.png}
+
+\columnbreak
+
+\vfill\null
+
+\columnbreak
+
 \subsubsection{Prüfungsfragen}
 
 \begin{itemize}

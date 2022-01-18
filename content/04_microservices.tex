@@ -76,24 +76,9 @@ Ist eine Vorgehensweise, um in komplexen Applikationen im strategischen Design d
     \item (OO)-Entwurf in einem Bounded Context vornehmen
     \item Domain Events herausfinden
 \end{itemize}
-
+\vfill\null
 \columnbreak
 \subsubsection{Makroarchitektur}
-
-\textbf{UI}
-
-Microservice hat sein eigenes UI
-
-\includegraphics[width=0.8\linewidth]{microservices-ui-1.png} \\
-
-Microservice gibt spezifischen Anteil zu UI Rahmen
-
-\includegraphics[width=0.8\linewidth]{microservices-ui-2.png} \\
-
-Microservies haben kein UI sondern nur Service-Schnittstelle, dieses wird stattdessen realisiert durch UI Full Client
-
-\includegraphics[width=0.8\linewidth]{microservices-ui-3.png}
-
 
 \textbf{Persistenz}
 
@@ -115,30 +100,18 @@ Zentraler DB-Service
     \item \textcolor{blue}{Shared Services} Microservices die allen anderen Microservices zur Verfügung stehen. Übernehmen meist Querschnittsfunktionen und können, eigene Persistenz enthalten
     \item \textcolor{blue}{Proxy Service} Übernimmt Kommunikation zu den applikationsexternen Service Provider und enthält meist eigenen Cache-Speicher
 \end{itemize}
-
+\vfill\null
+\columnbreak
 Full Server-Stack Microservices (Microservices als SCS)
 
 \includegraphics[width=\linewidth]{microservices-scs.png}
 
 \begin{itemize}
     \item \textcolor{blue}{Client} UI Rahmen App und separate installierbare Client App (z.B. Mobile App)
-    \item \textcolor{blue}{Persistenz} jeder Microservice hat seine eigene Persistenz
+    \item \textcolor{blue}{Persistenz} jeder Microservice hat eigene Persistenz
     \item \textcolor{blue}{Kommunikation} asynchrones Messaging über die MOM (Message Oriented Middleware), Zugriff auf Service Provider über einen zentralen proxy Microservice
 \end{itemize}
 \vspace{10pt}
-\vfill\null
-\columnbreak
-Full Client mit eigener Persistenz
-
-eignet sich bei Angebot unterschiedlicher App-Arten
-
-\includegraphics[width=\linewidth]{microservices-full-client.png}
-
-Full Client mit separater Persistenz
-
-Eignet sich bei der Migration einer bestehenden Mehrschichtenarchitektur in eine Microservice-Umgebung
-
-\includegraphics[width=\linewidth]{microservices-full-client-2.png}
 
 \textbf{Beispiele}
 
@@ -159,7 +132,6 @@ Eignet sich bei der Migration einer bestehenden Mehrschichtenarchitektur in eine
 \vspace{10pt}
 \includegraphics[width=\linewidth]{microservices-example-cars.png}
 
-\columnbreak
 \subsubsection{Microarchitektur}
 
 Jeder Mikroservices hat sein eigener Technologie-Stack, Dieser ist auf das zu beschränken, was benötigt wird
